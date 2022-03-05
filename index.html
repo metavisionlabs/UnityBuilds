@@ -21,10 +21,10 @@
         <div class="spinner"></div>
       </div>
     </div>
-    <div id="unity-fullscreen-button" style="display: none;"></div>
+    <!-- <div id="unity-fullscreen-button" style="display: none;"></div> -->
     <script src="web3/index.js"></script> 
     <script>
-      const hideFullScreenButton = false;
+      // const hideFullScreenButton = false;
       const buildUrl = "Build";
       const loaderUrl = buildUrl + "/UnityBuilds.loader.js";
       const config = {
@@ -34,7 +34,7 @@
         streamingAssetsUrl: "StreamingAssets",
         companyName: "MetavisionLabs",
         productName: "CafeCosmos",
-        productVersion: "Version [0.2] - 3/4/2022",
+        productVersion: "Version [0.21] - 3/5/2022",
       };
 
       const container = document.querySelector("#unity-container");
@@ -42,7 +42,7 @@
       const loadingCover = document.querySelector("#loading-cover");
       const progressBarEmpty = document.querySelector("#unity-progress-bar-empty");
       const progressBarFull = document.querySelector("#unity-progress-bar-full");
-      const fullscreenButton = document.querySelector("#unity-fullscreen-button");
+      // const fullscreenButton = document.querySelector("#unity-fullscreen-button");
       const spinner = document.querySelector('.spinner');
 
       const canFullscreen = (function() {
@@ -75,14 +75,14 @@
           progressBarFull.style.width = `${100 * progress}%`;
         }).then((unityInstance) => {
           loadingCover.style.display = "none";
-          if (canFullscreen) {
-            if (!hideFullScreenButton) {
-              fullscreenButton.style.display = "";
-            }
-            fullscreenButton.onclick = () => {
-              unityInstance.SetFullscreen(1);
-            };
-          }
+          // if (canFullscreen) {
+          //   if (!hideFullScreenButton) {
+          //     fullscreenButton.style.display = "";
+          //   }
+          //   fullscreenButton.onclick = () => {
+          //     unityInstance.SetFullscreen(1);
+          //   };
+          // }
         }).catch((message) => {
           alert(message);
         });
